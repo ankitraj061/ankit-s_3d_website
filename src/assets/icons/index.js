@@ -1,88 +1,45 @@
-import css from './css.svg'
-import express from './express.svg'
-import git from './git.svg'
-import github from './github.svg'
-import html from './html.svg'
-import javascript from './javascript.svg'
-import mongodb from './mongodb.svg'
-import motion from './motion.svg'
-import mui from './mui.svg'
-import nextjs from './nextjs.svg'
-import nodejs from './nodejs.svg'
-import redux from './redux.svg'
-import sass from './sass.svg'
-import tailwindcss from './tailwindcss.svg'
-import typescript from './typescript.svg'
-import linkedin from './linkedin.svg'
-import twitter from './twitter.svg'
-import estate from './estate.svg'
-import pricewise from './pricewise.svg'
-import snapgram from './snapgram.svg'
-import summiz from './summiz.svg'
-import arrow from './arrow.svg'
-import contact from './contact.svg'
-import soundon from './soundon.png'
-import soundoff from './soundoff.png'
-import java from './java.svg'
-import jqerry from './JQerry.svg'
-import boot from './bootstrap.svg'
-import python from './Python.svg'
-import calc from './cal.png'
-import hotstar from './Hotstar.png'
-import mysql from './mysql.svg'
-import excel from './Excel.svg'
-import qr from './qr.svg'
-import powerbi from './powerbi.png'
-import pwlogo from './pwlogo.png'
-import postman from './postman.png'
-import aws from './aws.png'
-import x from './x.png'
-import redis from './redis.png'
-import socketio from './socketio.png'
-import react from './react.png'
-import docker from './docker.png'
-export {
-    postman,
-    powerbi,
-    css,
-    express,
-    git,
-    github,
-    html,
-    javascript,
-    mongodb,
-    motion,
-    mui,
-    nextjs,
-    nodejs,
-    redux,
-    sass,
-    tailwindcss,
-    typescript,
-    linkedin,
-    twitter,
-    estate,
-    pricewise,
-    snapgram,
-    summiz,
-    arrow,
-    contact,
-    soundon,
-    soundoff,
-    java,
-    jqerry,
-    boot,
-    python,
-    calc,
-    hotstar,
-    mysql,
-    excel,
-    qr,
-    pwlogo,
-    aws,
-    x,
-    redis,
-    socketio,
-    react,
-    docker
-}
+const base = "/icons";
+
+export const postman = `${base}/postman.png`;
+export const powerbi = `${base}/powerbi.png`;
+export const css = `${base}/css.svg`;
+export const express = `${base}/express.svg`;
+export const git = `${base}/git.svg`;
+export const github = `${base}/github.svg`;
+export const html = `${base}/html.svg`;
+export const javascript = `${base}/javascript.svg`;
+export const mongodb = `${base}/mongodb.svg`;
+export const motion = `${base}/motion.svg`;
+export const mui = `${base}/mui.svg`;
+export const nextjs = `${base}/nextjs.svg`;
+export const nodejs = `${base}/nodejs.svg`;
+export const redux = `${base}/redux.svg`;
+export const sass = `${base}/sass.svg`;
+export const tailwindcss = `${base}/tailwindcss.svg`;
+export const typescript = `${base}/typescript.svg`;
+export const linkedin = `${base}/linkedin.svg`;
+export const twitter = `${base}/twitter.svg`;
+export const estate = `${base}/estate.svg`;
+export const pricewise = `${base}/pricewise.svg`;
+export const snapgram = `${base}/snapgram.svg`;
+export const summiz = `${base}/summiz.svg`;
+export const arrow = `${base}/arrow.svg`;
+export const contact = `${base}/contact.svg`;
+export const soundon = `${base}/soundon.png`;
+export const soundoff = `${base}/soundoff.png`;
+export const java = `${base}/java.svg`;
+export const jqerry = `${base}/JQerry.svg`;
+export const boot = `${base}/bootstrap.svg`;
+export const python = `${base}/Python.svg`;
+export const calc = `${base}/cal.png`;
+export const hotstar = `${base}/Hotstar.png`;
+export const mysql = `${base}/mysql.svg`;
+export const excel = `${base}/Excel.svg`;
+export const qr = `${base}/qr.svg`;
+export const pwlogo = `${base}/pwlogo.png`;
+export const aws = `${base}/aws.png`;
+export const x = `${base}/x.png`;
+export const redis = `${base}/redis.png`;
+export const socketio = `${base}/socketio.png`;
+export const react = `${base}/react.png`;
+export const docker = `${base}/docker.png`;

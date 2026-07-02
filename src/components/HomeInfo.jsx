@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { arrow } from "../assets/icons";
 
@@ -23,7 +23,7 @@ const HomeInfo = ({ currentStage }) => {
            Learning everyday some new things and applying into real world.
         </p>
 
-        <Link to='/about' className='neo-brutalism-white neo-btn'>
+        <Link href='/about' className='neo-brutalism-white neo-btn'>
           Know more
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
@@ -38,7 +38,7 @@ const HomeInfo = ({ currentStage }) => {
           Build multiple projects in Web Development along the years <br /> and Welcoming you here!
         </p>
 
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
+        <Link href='/projects' className='neo-brutalism-white neo-btn'>
           Visit my portfolio
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
@@ -53,7 +53,7 @@ const HomeInfo = ({ currentStage }) => {
         Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
       </p>
 
-      <Link to='/contact' className='neo-brutalism-white neo-btn'>
+      <Link href='/contact' className='neo-brutalism-white neo-btn'>
         Let's talk
         <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
       </Link>

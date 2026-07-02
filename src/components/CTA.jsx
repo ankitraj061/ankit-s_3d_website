@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const CTA = () => {
   return (
@@ -7,7 +7,7 @@ const CTA = () => {
         Have a project in mind? <br className='sm:block hidden' />
         Let’s build something together!
       </p>
-      <Link to='/contact' className='btn'>
+      <Link href='/contact' className='btn'>
         Contact
       </Link>
     </section>

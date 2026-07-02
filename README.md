@@ -1,6 +1,6 @@
 # Ankit Raj Portfolio
 
-An interactive developer portfolio built with React, Vite, Tailwind CSS, and Three.js.  
+An interactive developer portfolio built with Next.js, React, Tailwind CSS, and Three.js.
 The site showcases my profile, skills, experience, education, and projects with a 3D landing experience and a working contact form.
 
 ## Live Website
@@ -11,7 +11,7 @@ The site showcases my profile, skills, experience, education, and projects with 
 
 - 3D hero section using `@react-three/fiber` and `three`
 - Animated 3D models (island, bird, plane, fox, sky)
-- Multi-page routing with React Router (`/`, `/about`, `/projects`, `/contact`)
+- Multi-page routing with the Next.js App Router (`/`, `/about`, `/projects`, `/contact`)
 - Work experience and education timeline
 - Skills and interests showcase
 - Projects grid with GitHub/live links
@@ -20,34 +20,43 @@ The site showcases my profile, skills, experience, education, and projects with 
 
 ## Tech Stack
 
-- React 18
-- Vite 4
+- Next.js 16 (App Router)
+- React 19
 - Tailwind CSS
 - Three.js + React Three Fiber + Drei
-- React Router DOM
 - EmailJS (`@emailjs/browser`)
 - Lucide React icons
+
+> Note: the dev/build scripts pin the classic webpack bundler (`next dev/build --webpack`) instead of Turbopack — the current Turbopack build has a bundling bug with `@react-three/fiber`'s error-boundary class that breaks unrelated routes.
 
 ## Project Structure
 
 ```txt
 .
 ├── public/
+│   ├── icons/            # skill/social icons
+│   ├── images/           # project & timeline images
+│   ├── models/            # 3D models (.glb)
+│   └── sakura.mp3
 ├── src/
-│   ├── assets/          # icons, images, audio, 3D models
-│   ├── components/      # shared UI components
-│   ├── constants/       # skills, projects, social links, timeline data
-│   ├── hooks/           # custom hooks (alert handling)
-│   ├── models/          # 3D model wrappers/components
-│   ├── pages/           # Home, About, Projects, Contact
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
+│   ├── app/
+│   │   ├── layout.jsx           # root layout (Navbar, metadata, globals.css)
+│   │   ├── page.jsx              # Home (client-only 3D scene)
+│   │   ├── globals.css
+│   │   └── (main)/                # route group with shared Footer
+│   │       ├── layout.jsx
+│   │       ├── about/page.jsx
+│   │       ├── projects/page.jsx
+│   │       └── contact/page.jsx
+│   ├── assets/           # icon/image path constants (files live in public/)
+│   ├── components/       # shared UI components (HomeScene, ContactScene, Timeline, etc.)
+│   ├── constants/        # skills, projects, social links, timeline data
+│   ├── hooks/            # custom hooks (alert handling)
+│   ├── models/           # 3D model wrappers/components
+│   └── lib/
+├── next.config.js
 ├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── vercel.json
+└── tailwind.config.js
 ```
 
 ## Getting Started
@@ -69,7 +78,7 @@ npm install
 npm run dev
 ```
 
-By default, Vite serves the app at `http://localhost:5173`.
+The app is served at `http://localhost:3000`.
 
 ### Build for Production
 
@@ -77,10 +86,10 @@ By default, Vite serves the app at `http://localhost:5173`.
 npm run build
 ```
 
-### Preview Production Build
+### Start Production Server
 
 ```bash
-npm run preview
+npm run start
 ```
 
 ### Lint
@@ -94,16 +103,16 @@ npm run lint
 Create a `.env` file in the project root and add:
 
 ```env
-VITE_APP_EMAILJS_SERVICE_ID=your_service_id
-VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-These are required for the Contact page form submission.
+These are required for the Contact page form submission (the `NEXT_PUBLIC_` prefix is required by Next.js to expose a variable to the browser).
 
 ## Deployment
 
-This project is configured for deployment on Vercel (`vercel.json` is included).
+This project is set up for zero-config deployment on Vercel — Next.js is auto-detected.
 
 General deployment flow:
 
@@ -116,7 +125,7 @@ General deployment flow:
 
 - `npm run dev` - start development server
 - `npm run build` - create production build
-- `npm run preview` - preview production build locally
+- `npm run start` - start the production server (after `build`)
 - `npm run lint` - run ESLint
 
 ## Author
