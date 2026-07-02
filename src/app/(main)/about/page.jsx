@@ -1,4 +1,4 @@
-import { CTA } from "@/components";
+import CTA from "@/components/CTA";
 import Timeline from "@/components/Timeline";
 import { education, skills, experience } from "@/constants";
 import { BackgroundLines } from "@/components/ui/background-lines";

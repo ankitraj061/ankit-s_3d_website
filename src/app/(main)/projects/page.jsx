@@ -1,6 +1,7 @@
-import { CTA } from "@/components";
+import CTA from "@/components/CTA";
 import { projects } from "@/constants";
 import { BackgroundLines } from "@/components/ui/background-lines";
+import { Github, ArrowUpRight } from "lucide-react";
 
 export const metadata = {
   title: "Projects | Ankit Raj",
@@ -106,7 +107,42 @@ const Projects = () => {
         })}
       </div>
 
-      <hr className='border-slate-200' />
+      <article className='relative overflow-hidden rounded-2xl p-8 sm:p-10 border-2 border-black bg-black shadow-[8px_8px_0px_#000] flex flex-col sm:flex-row items-center justify-between gap-6'>
+        <div
+          className='pointer-events-none absolute inset-0 opacity-20'
+          style={{
+            background:
+              "radial-gradient(circle at 15% 20%, rgba(0,198,255,0.6), transparent 40%), radial-gradient(circle at 85% 80%, rgba(0,114,255,0.5), transparent 40%)",
+          }}
+        />
+
+        <div className='relative flex items-center gap-4'>
+          <div className='shrink-0 w-14 h-14 rounded-xl bg-white/10 border-2 border-white/20 flex items-center justify-center'>
+            <Github className='w-7 h-7 text-white' />
+          </div>
+          <div>
+            <h3 className='text-xl sm:text-2xl font-poppins font-semibold text-white'>
+              Want to see more?
+            </h3>
+            <p className='mt-1 text-sm sm:text-base text-slate-300 leading-relaxed'>
+              These are just the highlights — check out my GitHub for the full
+              list of projects and contributions.
+            </p>
+          </div>
+        </div>
+
+        <a
+          href='https://github.com/ankitraj061'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='relative shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-bold text-black bg-white border-2 border-white shadow-[3px_3px_0px_rgba(255,255,255,0.4)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_rgba(255,255,255,0.4)] transition-all'
+        >
+          View All Projects on GitHub
+          <ArrowUpRight className='w-4 h-4' />
+        </a>
+      </article>
+
+      <hr className='border-slate-200 mt-16' />
 
       <CTA />
       </section>

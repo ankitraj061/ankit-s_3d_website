@@ -2,10 +2,13 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import { HomeInfo, Loader } from "@/components";
 import { soundoff, soundon } from "@/assets/icons";
 import { Bird, Island, Plane, Sky } from "@/models";
+import SkillsCloud from "@/components/SkillsCloud";
 
 const sakura = "/sakura.mp3";
 
@@ -63,6 +66,7 @@ const HomeScene = () => {
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
+    <>
     <section className='w-full h-screen relative'>
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
@@ -117,7 +121,21 @@ const HomeScene = () => {
           className='w-10 h-10 cursor-pointer object-contain'
         />
       </div>
+
+      {/* <div className='hidden sm:flex absolute bottom-4 right-4 z-10 flex-col items-center w-56 h-48 lg:w-64 lg:h-56 rounded-2xl bg-white/40 backdrop-blur-md border border-white/60 shadow-lg overflow-hidden'>
+        <Link
+          href='/about'
+          className='mt-2 flex items-center gap-1 text-xs font-semibold text-slate-700 hover:text-blue-600 transition-colors'
+        >
+          My Skills
+          <ArrowUpRight className='w-3.5 h-3.5' />
+        </Link>
+        <div className='flex-1 w-full'>
+          <SkillsCloud />
+        </div>
+      </div> */}
     </section>
+    </>
   );
 };
 
